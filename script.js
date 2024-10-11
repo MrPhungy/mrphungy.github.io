@@ -147,7 +147,7 @@ function displayAllNotes(notesData) {
 
 // thought of the day
 async function fetchThoughts() {
-    const response = await fetch('data/thoughtoftheday.json');
+    const response = await fetch('data/thoughtOfTheDay.json');
     const data = await response.json();
     return data.thoughts;
 }

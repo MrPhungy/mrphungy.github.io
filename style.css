@@ -135,7 +135,7 @@ header h1 {
 
 .name:hover .dot-com {
     opacity: 1; /* Fade in '.com' on hover */
-    transform: translateX(-152px);
+    transform: translateX(-128px);
     position: relative;
     letter-spacing: 0em;
 }
