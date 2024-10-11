@@ -1,0 +1,892 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-variablefont_opsz,wght.ttf') format('truetype'); /* Regular */
+    font-weight: 400; /* Regular weight */
+    font-style: normal; /* Normal style */
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-italic-variablefont_opsz,wght.ttf') format('truetype'); /* Italic */
+    font-weight: 400; /* Regular weight */
+    font-style: italic; /* Italic style */
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter-variablefont_opsz,wght.ttf') format('truetype'); /* Bold */
+    font-weight: 700; /* Bold weight */
+    font-style: normal; /* Normal style */
+}
+
+/* Global Styles */
+body {
+    /* font-family: 'Helvetica Neue', Arial, sans-serif; */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1d1e21; /* Updated background color */
+    color: #f9f9f9; /* Light text color for contrast */
+}
+
+/* Header ////////////////////////////////////////////////////////////////////////////////////////////////*/
+header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the name and nav */
+    align-items: center; /* Center items vertically */
+    background-color: #1d1e21; /* Match body background color */
+    color: #f9f9f9; /* Light text color */
+    padding: 0px 0px; /* Padding for top/bottom and sides */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 2em; /* Larger font size for the title */
+    letter-spacing: -.1em; /* No letter spacing for a clean look */
+}
+
+/* keviin transition ////////////////////////////////////////////////////////////////////////////////////////////////*/
+.name {
+    display: inline-block; /* Allow the spans to be treated as a block */
+    position: relative; /* Create a positioning context */
+    margin-left:50px;
+    margin-top:50px;
+    white-space: nowrap; /* Ensure content doesn’t break unless we specify */
+
+    opacity: 0; /* Initially hide the text */
+    visibility: hidden; /* Make the text hidden */
+}
+
+.name.visible {
+    animation: slidein 1s ease-in forwards; /* Apply fadeIn animation */
+    opacity: 1; /* Set opacity to 1 when visible */
+    visibility: visible; /* Make the text visible */
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(10px); /* Start from 100px to the right */
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        transform: translateX(0); /* End at original position */
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .name {
+        display: none; /* Hide the name block on mobile screens */
+    }
+}
+
+
+@media only screen and (min-width: 801px) {
+    .home-icon {
+        display: none; /* Hide the home icon on desktop */
+    }
+}
+
+
+/* makes header visible */
+.no-fade .name {
+    opacity: 1; /* Make header text fully visible */
+    visibility: visible; /* Ensure header text is visible */
+    transition: none; /* Disable transition for this page */
+}
+
+.no-fade nav ul li a {
+    opacity: 1; /* Make navigation links fully visible */
+    visibility: visible; /* Ensure navigation links are visible */
+    transition: none; /* Disable transition for this page */
+}
+
+.name span {
+    display: inline-block; /* Each letter is treated as a block */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+
+}
+
+.fade {
+    opacity: 1; /* Fully visible initially */
+}
+
+.name:hover .fade {
+    opacity: 0; /* Fade out on hover */
+}
+
+.new-i {
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    display: inline-block; /* Ensure it appears inline */
+    position: absolute;
+}
+
+.dot-com {
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    display: inline-block; /* Ensure it appears inline */
+}
+
+.name:hover .new-i {
+    opacity: 1; /* Fade in 'i' on hover */
+    transform: translateX(-123px);
+    position: relative;
+}
+
+.name:hover .dot-com {
+    opacity: 1; /* Fade in '.com' on hover */
+    transform: translateX(-103px);
+    position: relative;
+    letter-spacing: 0em;
+}
+
+.name:hover .slide {
+    transform: translateX(10px); /* Slide the last 'n' to the right */
+}
+
+a {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit the text color */
+}
+
+a:hover {
+    color: #f9f9f9; /* Change color on hover if desired */
+}
+
+/* top right buttons ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+nav ul {
+    list-style-type: none; /* Remove bullets */
+    text-align: right;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    text-align: left; /* Align items to the left on mobile */
+    width: 100%; /* Ensure the ul takes full width */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align items to the right */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+
+nav ul li a {
+    opacity: 0; /* Initially hide the text */
+    visibility: hidden; /* Hide elements until fade-in */
+}
+
+nav ul li a.fade-in {
+    visibility: visible; /* Show the element for animation */
+    animation: fadeIn 1s ease-in forwards; /* Apply the fadeIn animation */
+}
+
+nav ul li {
+    display: inline; /* Display items inline */
+    margin: 0px 40px; /* Increase spacing between items */
+    margin-top:50px;
+    white-space: nowrap; /* Prevent text from wrapping */
+
+    opacity: 0; /* Initially hide the text */
+    animation: fadeIn 0s ease-in forwards; /* Apply the fadeIn animation */
+}   
+
+@media only screen and (max-width: 800px) {
+    nav {
+        width: 100%; /* Make the nav take full width */
+        overflow: auto; /* Prevent cutting off of elements */
+        margin-top: 20px; /* Add space between the nav and top of the screen */
+    }
+
+    nav ul {
+        text-align: center; /* Align items to the right on mobile */
+        width: 100%; /* Ensure the ul takes full width */
+    }
+
+    nav ul li {
+        font-size: 0.6em; /* Reduce font size for mobile */
+        margin: 0px 4px; /* Adjust spacing between items */
+    }
+    nav ul li a {
+        text-transform: capitalize; /* Capitalize the first letter of each word */
+    }
+
+    .home-icon {
+        display: block; /* Show the home icon on mobile */
+    }
+}
+
+nav ul li a {
+    color: #888888; /* Light color for nav links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.8em; /* Standard font size for links */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Transition for hover effects */
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    transition: color 0.3s, transform 0.3s; /* Transition for hover effects */
+
+}
+
+/* title for tabs*/
+.tab-title {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and button */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 16px; /* Space below the header */
+    font-size: 1.8em;
+    padding: 0px 20px; /* Add some padding for the main content */
+}
+
+
+/* Hero Section ////////////////////////////////////////////////////////////////////////////////////////////////*/
+#hero {
+    background-color: #1d1e21; /* Match hero section background */
+    color: #f9f9f9; /* Light color for hero text */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the hero content */
+}
+
+.hero-content {
+    max-width: 7 50px; /* 930px to line up with others */
+    text-align: left; /* Align text to the left */
+    margin: auto; /* Center the content */
+    padding: 150px 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+#hero h2 {
+    font-size: 3.2em; /* Make font size smaller */
+    font-weight: normal; /* Remove bold styling */
+    margin-bottom: 100px; /* Space below heading */
+    margin-top: 120px;
+    animation: fadeIn 1s ease-in; /* Apply the fadeIn animation */
+}
+
+@media only screen and (max-width: 800px) { 
+    .hero-content{
+        padding: 0px 10px;
+    }
+    #hero h2{
+        font-size: 3em;
+        text-align: center;
+    }
+
+}
+
+
+/* About Section ////////////////////////////////////////////////////////////////////////////////////////////////*/
+#about { 
+    margin: 20px 0; /* Space between articles */
+    text-align: center;
+}
+
+.about-resume-button {
+    background-color: #88888819; /* Make the background transparent */
+    border: 1px solid #888888d0; /* Set your border color */
+    border-radius: 15px; /* Add rounded corners */
+    color: #888888; /* Inherit the text color */
+    padding: 4px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    float: right; /* Align to the right */
+    font-size: .7em;
+
+}
+
+.about-resume-button:hover{
+    color:#ffffffc8;
+    border: 1px solid #ffffffc8;
+    background-color: #88888868;
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+@media only screen and (max-width: 425px) { 
+    .about-resume-button {
+        display: block; /* makes the button take its own line */
+        margin: 20px 0px 0px 0px; /* centers the button and adds top margin */
+        padding: 3px 6px;
+        font-size: .4em;
+    }
+}
+
+
+
+
+.about-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: #ffce7e; /* Text color for the link */
+}
+
+.about-link:hover{
+    text-decoration: none; /* Remove underline from the link */
+    color: #ffe0af; /* Text color for the link */
+}
+/*images*/
+.image-gallery {
+    display: flex; /* Use flexbox to align images in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    justify-content: flex-start; /* Center the images horizontally */
+    margin-top: 20px; /* Space above the image gallery */
+    padding: 10px 0; /* Add padding for a cleaner look */
+}
+
+.gallery-image {
+    width: 700px; /* Default width for desktop */
+    height: 525px; /* Default height for desktop */
+    object-fit: cover; /* Maintain aspect ratio and cover the box */
+    margin: 0 10px; /* Space between images */
+}
+
+/* makes images center when on desktop*/
+
+/* Media query for laptop view */
+@media (min-width: 1020px) {
+    .gallery-image {
+        flex: 0 0 auto; /* Prevent images from growing or shrinking */
+        width: 31%; /* Set a width that allows three images to fit side by side */
+        height: auto; /* Let height adjust automatically */
+    }
+    .image-gallery {
+        justify-content: center; /* Center the images horizontally */
+    }
+}
+
+/* Media query for tablet view */
+@media (max-width: 769px) {
+    .gallery-image {
+        width: 450px; /* Reduced width for tablet */
+        height: 300px; /* Reduced height for tablet */
+    }
+    .image-gallery {
+        justify-content: flex-start; /* Center the images horizontally */
+    }
+}
+
+/* Media query for mobile view */
+@media (max-width: 425px) {
+    .gallery-image {
+        width: 300px; /* Further reduced width for mobile */
+        height: 200px; /* Further reduced height for mobile */
+    }
+}
+
+
+/* Projects Section ///////////////////////////////////////////////////////////////////////////////////////////////*/
+#projects {
+    padding: 50px 0px;
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+
+#projects h2 { /* Projects */
+    max-width: 925px; /* Limit width for better readability */
+    text-align: left; /* Align text to the left */
+    margin: auto; /* Center the content */
+    font-size: 1.8em;
+    margin-bottom: 15px; /* Space below heading */
+    letter-spacing: .03em;
+    
+}
+
+@media only screen and (max-width: 800px) {
+    #projects h2{
+        margin-top: 0px;
+        text-align:left;
+    }
+    
+}
+
+
+.project-container {
+    max-width: 1000px; /* Limit width for better readability */
+    text-align: left; /* Align text to the left */
+    margin: auto;
+    display: flex;
+    gap: 15px; /* Space between project cards */
+    flex-wrap: wrap; /* Allow wrapping of cards on smaller screens */
+    justify-content: flex-start;
+}
+
+.project-card {
+    position: relative; /* Allow positioning of child elements */
+    background-color: transparent; /* Make background transparent */
+    border-radius: 25px; /* More rounded corners */
+    width: 300px; /* Fixed width for project cards */
+    height: 225px; /* Fixed height for square shape */
+    overflow: hidden; /* Ensure content stays within the card */
+    text-decoration: none; /* Remove underline from links */
+    transition: transform 0.3s ease; /* Add hover scale effect */
+    perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 40%; /* Adjust height to control how much of the card is covered by the gradient */
+    background: linear-gradient(to top,#ffffff, rgba(75, 74, 74, 0)); /* White gradient fading to transparent */
+    z-index: 1; /* Ensure gradient is above the image but below the text */
+}
+
+.project-card img {
+    width: 100%; /* Make the image fill the card width */
+    height: 100%; /* Make the image fill the card height */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    border-radius: 15px; /* Rounded corners for the image */
+}
+
+.project-card .caption {
+    position: absolute; /* Position text absolutely within the card */
+    bottom: 32px; /* Position caption above the project description */
+    left: 14px; /* Align text to the left */
+    color: #6d6d6d; /* Lighter text color for the caption */
+    font-size: 0.9em; /* Smaller font size for caption */
+    font-weight: normal; /* Regular weight for the caption */
+    z-index: 2; /* Ensure the caption is above the gradient */
+}
+
+.project-card p {
+    position: absolute; /* Position text absolutely within the card */
+    bottom: 0px; /* Position text at the bottom         1d1e21*/
+    left: 8px; /* Align text to the left */
+    color: #1d1e21; /* Text color inside the card */
+    margin: 0; /* Remove default margin */
+    padding: 5px; /* Optional: padding around the text */
+    border-radius: 5px; /* Optional: rounded corners for the text background */
+    font-size: 1.4em;
+    font-weight: bold;    
+    z-index: 2; /* Ensure text is above the gradient */
+
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+    
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepen the shadow on hover */
+}
+
+.tilt{
+    transition: all .1s ease;
+    cursor: pointer;
+}
+
+
+/* notes Section ///////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Title Styles for Notes */
+.notes-title {
+    max-width: 900px; /* Max width for the title */
+    margin: auto; /* Remove default margin */
+    font-size: 3em; /* Size of the title */
+    color: #ffffff; /* Color of the title */
+    text-align: left; /* Align title to the left */
+    padding: 0px 20px;
+
+}
+
+.notes-content {
+    max-width: 900px; /* Limit width for better readability */
+    text-align: left; /* Align text to the left */
+    margin: auto; /* Center the content */
+    padding: 50px 0px;
+    justify-content: center; /* Center the hero content */
+
+}
+
+.notes-index {
+    max-width: 965px; /* Limit width for better readability */
+    text-align: left; /* Align text to the left */
+    margin: auto; /* Center the content */
+    padding: 0px 0px 0px 0px;
+    justify-content: center; /* Center the hero content */
+
+}
+
+.notes-indexlink {
+    text-decoration: none; /* Remove underline from the link */
+    color: #ffce7e; /* Text color for the link */
+    max-width: 925px;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: block; /* Ensure the link behaves like a block element */
+}
+
+
+.notes-indexlink .date {
+    font-size: 0.8em; /* Make the date slightly smaller */
+    color: #888888; /* Different color for the date */
+    margin-left: 10px; /* Add some spacing between the text and the date */
+    float: right; /* Align the date to the right */
+    font-family: 'Roboto Mona', monospace;
+}
+
+.notes-indexline {
+    height: 1px; /* Thickness of the line */
+    background-color: #888888; /* Color of the line */
+    width: 100%; /* Ensure the line spans the full width */
+    margin: 5px 0; /* Add margin above and below the line for spacing */
+
+    
+}
+
+.notes-line {
+    height: 1px; /* Thickness of the line */
+    background-color: #888888; /* Color of the line */
+    
+}
+
+/*view all notes button */
+.view-all-button {
+    background-color: #88888819; /* Make the background transparent */
+    border: 1px solid #888888d0; /* Set your border color */
+    border-radius: 15px; /* Add rounded corners */
+    color: #888888; /* Inherit the text color */
+    padding: 4px 30px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    float: right; /* Align to the right */
+    font-size: .7em;
+
+}
+
+.view-all-button:hover {
+    color:#ffffffc8;
+    border: 1px solid #ffffffc8;
+    background-color: #88888868;
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+
+/* Main Content Styles for Notes */
+.notes-main {
+    padding: 20px; /* Add some padding for the main content */
+    max-width: 925px; /* Max width for main content */
+    margin: auto; /* Center the main content */
+    font-size: 1.5em;
+}
+
+.notes-caption {
+    padding: 10px 20px; /* Add some padding for the main content */
+    max-width: 925px; /* Max width for main content */
+    margin: 0; /* Center the main content */
+    font-size: 1.3em;
+    color: #888888;
+    padding-bottom: 30px;
+    font-weight: bold;
+    
+}
+
+.notes-year {
+    max-width: 925px; /* Max width for the title */
+    margin: auto; /* Remove default margin */
+    font-size: 2.4em; /* Size of the title */
+    color: #ffffff; /* Color of the title */
+    text-align: left; /* Align title to the left */
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin: 20px;
+    
+}
+
+.notes-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: #ffce7e; /* Text color for the link */
+    max-width: 925px;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0px 20px; /* lines up the left edge*/
+    display: block; /* Ensure the link behaves like a block element */
+}
+
+
+.notes-link .date {
+    font-size: 0.8em; /* Make the date slightly smaller */
+    color: #888888; /* Different color for the date */
+    margin-left: 10px; /* Add some spacing between the text and the date */
+    float: right; /* Align the date to the right */
+    font-family: 'Roboto Mona', monospace;
+}
+
+/* Hide the date on mobile screens */
+@media only screen and (max-width: 750px) {
+    .notes-link .date {
+        display: none; /* Hide the date on mobile */
+    }
+}
+
+/* centers projects on mobile */
+@media (max-width: 1024px) {
+    .project-container {
+        justify-content: center; /* Center items on mobile */
+    }
+}
+
+
+.notes-line {
+    height: 1px; /* Height of the line */
+    background-color: #888888; /* Color of the line */
+    margin: 20px; /* No margin to line up perfectly */
+    max-width: 925px; /* Match the max width of the notes link */
+    margin-top: 5px; /* Space between the line and the text */
+    margin-bottom: 5px;
+}
+
+.notes-link:hover {
+    color: #ffe0af;
+    transition: color 0.3s, transform 0.3s;
+    text-decoration: underline;
+}
+
+.note-page-title {
+    max-width: 900px; /* Max width for the title */
+    margin: auto; /* Remove default margin */
+    font-size: 3em; /* Size of the title */
+    color: #ffffff; /* Color of the title */
+    text-align: left; /* Align title to the left */
+    padding: 80px 20px 0 20px; /* top right bottom left */
+
+}
+
+.note-page-article {
+    font-family: 'Inter', sans-serif;
+    font-size: large;
+    line-height: 1.6; 
+    max-width: 900px; /* Limit width for better readability */
+    text-align: left; /* Align text to the left */
+    margin: auto; /* Center the content */
+    padding: 20px; /* top right bottom left */
+    justify-content: center; /* Center the hero content */
+    color:#a5a5a5
+}
+
+.note-page-article h2 {
+    color: #ffffff; /* Replace 'yourColor' with the desired color */
+    font-weight:normal;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* Contact me ////////////////////////////////////////////////////////////////////// */
+
+.contact-container {
+    display: flex; /* Use flexbox to align form and text horizontally */
+    justify-content: space-between; /* Ensure space between the form and text */
+    padding: 20px;
+    flex-direction: row; /* Align items in a row (form on the left, text on the right) */
+}
+
+
+/* puts "Lets chat" on top when in mobile*/
+@media (max-width: 769px) {
+    .contact-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .contact-text {
+        order: 1; /* Ensure text comes first */
+        width: 100%; /* Full width for mobile */
+        padding: 0; /* Optional: Remove padding if needed */
+    }
+
+    .contact-form {
+        order: 2; /* Ensure form comes second */
+        width: 100%; /* Full width for mobile */
+    }
+
+    .contact-form textarea {
+        height: 100px; /* Set a fixed height for mobile */
+    }
+}
+
+.contact-text {
+    width: 60%; /* Text takes up the remaining 40% */
+    padding-left: 20px; /* Add some spacing between the form and text */
+    font-size: 1.2em; /* Adjust font size */
+    color: #888888; /* Text color */
+    text-align: left; /* Align the text to the right */
+    margin-top: 150px;
+    font-weight: bold;
+}
+
+.contact-link {
+    color: #ffffff; /* Change the link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    display: block; /* Makes each link a block element */
+    margin-bottom: 16px; /* Adds space below each link */
+
+}
+
+.contact-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+.contact-text h1{ /* "Get in touch" */
+    font-size: 4em; /* Adjust font size */
+    color: #ffffff; /* Text color */
+    text-align: left; /* Align the text to the right */
+    margin-top: 150px;
+}
+
+.contact-form {
+    width: 100%; /* Full width for mobile */
+    max-width: 500px; /* Default max width for mobile */
+    margin: 150px auto;
+    padding: 15px 20px; /* Vertical padding */
+    min-height: 800px; /* Minimum vertical length */
+    background-color: #88888819; /* Transparent background */
+    border: 1px solid #888888d0; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    color: #888888; /* Text color */
+    font-size: 1.3em;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 768px) {
+    .contact-form {
+        width: 85%; /* Slightly less than full width */
+        max-width: 700px; /* Max width for tablet */
+        min-height: 0px; /* Minimum vertical length */
+
+    }
+    .contact-text {
+        width: 100%; /* Text takes up the remaining 40% */
+        margin-top: 0px;
+    }
+    .contact-text h1{ /* "Get in touch" */
+        margin: 20px 0 20px 0;
+    }
+    
+}
+
+/* Laptop/Desktop styles */
+@media screen and (min-width: 769px) {
+    .contact-form {
+        width: 80%; /* Take up 80% of the screen width */
+        max-width: 600px; /* Max width for laptops/desktops */
+    }
+}
+
+
+.contact-form label {
+    display: block; /* Make the labels stack on top of inputs */
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add spacing below the label */
+    font-weight: bold; /* Make the labels bold */
+    text-align: left; /* Align the label text to the left */
+    font-size: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Make the inputs take up full width */
+    padding: 10px; /* Padding inside the inputs */
+    margin-bottom: 20px; /* Add spacing between inputs */
+    border: 1px solid #ccc; /* Border around the inputs */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-size: 18px; /* Font size for input text */
+    font-family: Arial, sans-serif; /* Set font to Arial */
+    background-color: #ffffff;
+}
+
+@media (max-width: 769px) {
+    .contact-form textarea {
+        height: 150px; /* Set a fixed height for mobile */
+    }
+}
+
+.contact-form button {
+    background-color: #88888819; /* Make the background transparent */
+    border: 1px solid #888888d0; /* Set your border color */
+    border-radius: 15px; /* Add rounded corners */
+    color: #888888; /* Inherit the text color */
+    padding: 8px 25px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    float: left; 
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    color:#ffffffc8;
+    border: 1px solid #ffffffc8;
+    background-color: #88888868;
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+/* Media Query for Mobile View */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack the form and text vertically */
+        align-items: center; /* Center align the content */
+    }
+}
+
+/*daily thought text*/
+#daily-thought {
+    text-align: center;
+    font-size: 1.4em; /* Text size for the thought */
+    color: #ffffff; /* Text color for the thought */
+    line-height: 1.5; /* Spacing between lines */
+    font-family: 'Courier new', monospace; /* Change font family */
+    font-style: italic;
+}
+
+/*thought of the day countdown*/
+#countdown-timer {
+    font-size: 1em;
+    color: #8888889f; /* Change this to your desired color */
+    margin-top: 20px; /* Space above the countdown */
+    margin-left: 20px; /* Space above the countdown */
+    text-align: left; /* Center the countdown text */
+    font-family: 'Roboto Mona', monospace;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1d1e21; /* Updated background color */
+    color: #888888; /* Light text color for footer */
+    padding: 100px 20px 20px 20px; /* Add padding to the top and bottom for spacing */
+    text-align: center; /* Center align text */
+    
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    display: flex; /* Display links side by side */
+    gap: 10px; /* Space between links */
+    justify-content: center; /* Center the links horizontally */
+    font-family: inherit; /* Inherit the font from the rest of the page */
+}
+
+.footer-links li {
+    display: inline; /* Keep the items in a row */
+}
+
+.footer-links a {
+    color: #888888; /* Light color for nav links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1em; /* Standard font size for links */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Transition for hover effects */
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+    padding: 5px 10px;
+}
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- for icon logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="../../style.css">
+
+</head>
+<body>
+
+    <header class="no-fade">
+        <a href="../../index.html" class="name"> 
+            <h1>
+                <span>k</span>
+                <span>e</span>
+                <span>v</span>
+                <span>i</span>
+                <span class="slide">n</span>
+                <span class="fade">  </span>
+                <span class="fade">  </span>
+                <span class="fade">p</span>
+                <span class="fade">h</span>
+                <span class="fade">u</span>
+                <span class="fade">n</span>
+                <span class="fade">g</span>
+                <span class="new-i">i</span> <!-- This will appear on hover -->
+                <span class="dot-com">.com</span> <!-- This will appear on hover -->
+            </h1>
+        </a>
+        
+        <nav>
+            <ul>
+                <li class="home-icon"><a href="../../index.html"><i class="fas fa-house"></i></a></li>
+                <li><a href="AboutMe.html">about</a></li>
+                <li><a href="../index.html#projects">projects</a></li>
+                <li><a href="notes.html">notes</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="contact-container">
+            <form action="mailto:kevinphungh@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+    
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="16" required></textarea>
+    
+                <button type="submit">Send Email</button>
+            </form>
+    
+            <div class="contact-text">
+                <h1>Let's chat.</h1>
+                <p style="margin-bottom: 30px;">If you'd like to get in touch, feel free to send me a message. I'm always open to discussing new projects, opportunities, or collaborations. You can also reach me directly via email at <u>kevinphungh@gmail.com</u> or connect with me on LinkedIn.</p>
+
+
+                <div>
+                    <a href="https://www.linkedin.com/in/kphung/" target="_blank" class="contact-link">LinkedIn</a>
+                </div>
+                <div>
+                    <a href="https://github.com/MrPhungy" target="_blank" class="contact-link">GitHub</a>
+                </div>
+                <div>
+                    <a href="/data/Resume.pdf" target="_blank" class="contact-link">Resume</a>
+                </div>
+                
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
