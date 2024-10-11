@@ -129,13 +129,13 @@ header h1 {
 
 .name:hover .new-i {
     opacity: 1; /* Fade in 'i' on hover */
-    transform: translateX(-145px);
+    transform: translateX(-135px);
     position: relative;
 }
 
 .name:hover .dot-com {
     opacity: 1; /* Fade in '.com' on hover */
-    transform: translateX(-140px);
+    transform: translateX(-130px);
     position: relative;
     letter-spacing: 0em;
 }
