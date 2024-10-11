@@ -22,8 +22,10 @@ tiltEls.forEach(tilt => {
  
 // Fade in for top left icons only on index.html
 window.addEventListener('load', function() {
-    // Check if we are on the index.html page
-    if (window.location.pathname.includes('index.html')) {
+    // Check if we are on the index.html page or the root URL
+    const path = window.location.pathname;
+
+    if (path === '/' || path.includes('index.html')) {
         // Select all navigation items (links in your list)
         const navItems = document.querySelectorAll('nav ul li:not(.home-icon) a'); // Select only the links, excluding home icon
         
