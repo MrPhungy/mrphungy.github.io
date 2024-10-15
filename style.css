@@ -888,20 +888,16 @@ footer {
     padding: 5px 10px;
 }
 
-.movie-container {
+.viz-container {
     display: flex;
-    flex-direction: column; /* Stack columns on top of each other */
-    align-items: center;
+    justify-content: center;  /* Horizontal centering */
+    align-items: center;      /* Vertical centering */
+    margin-top: 20px;         /* Optional, adjust margin as needed */
 }
-.left-column { /*tableau*/
-    margin-left: 0; /* Reset left margin */
-    order: 2;
-    margin-left: 0; /* Adjust this value to scoot the left column to the right */
-    }
 
-.right-column { /*text*/
-    margin-right: 0; /* Reset right margin */
-    order: 1;
-
+.tableauPlaceholder {
+    width: 100%;              /* Ensure placeholder width adapts */
+    max-width: 800px;          /* Optional, limit the maximum width */
+    text-align: center;        /* Center the contents within the div */
 }
 
