@@ -888,38 +888,20 @@ footer {
     padding: 5px 10px;
 }
 
-
 .movie-container {
-    display: flex; /* Use flexbox for the layout */
+    display: flex;
+    flex-direction: column; /* Stack columns on top of each other */
+    align-items: center;
 }
-
-.left-column {
-    flex: 1; 
-    margin-left: 15%; /* Adjust this value to scoot the left column to the right */
-    margin-top: 50px; /* Keeping the top margin */
-}
-
-.right-column {
-    flex: 1; 
-    margin-right: 15%; /* Adjust this value to scoot the right column to the left */
-    padding: 10px;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 1024px) { /* Adjust the breakpoint as needed */
-    .movie-container {
-        display: flex;
-        flex-direction: column; /* Stack columns on top of each other */
+.left-column { /*tableau*/
+    margin-left: 0; /* Reset left margin */
+    order: 2;
+    margin-left: 0; /* Adjust this value to scoot the left column to the right */
     }
 
-    .left-column {
-        margin-left: 0; /* Reset left margin */
-        order: 2;
-    }
-
-    .right-column {
-        margin-right: 0; /* Reset right margin */
-        order: 1;
-    }
+.right-column { /*text*/
+    margin-right: 0; /* Reset right margin */
+    order: 1;
 
 }
+
