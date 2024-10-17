@@ -64,10 +64,8 @@
         <article>
             <section>
                 <h2>Visualizing Movie Data</h2>
-                <p>*If you're having trouble viewing the chart, please log into your Google account and enable third-party cookies. </p>
-                <p>Or, <a class="about-link" target = blank href="https://lookerstudio.google.com/reporting/f732dd6c-f513-4fca-b727-e47b23fa8e66">click here!</a></p>
-                <p>For a bit of fun, curiosity, and self-learning, I wanted to display all my movie data from my Letterboxd account. However, this proved to be difficult considering that Letterboxd does not offer a public API quite yet. So, I wrote a Python script to scrape my data from Letterboxd and save it into a Google Sheet. The Python script is run automatically once every 24 hours, ensuring new data daily. With the power of Looker Studio, the data is then sliced and diced, allowing me to dynamically create this neat little chart to display all the information.</p>
-                <a class="about-link" href="https://letterboxd.com/Phungy/">Letterboxd.com</a>
+                <p>For a bit of fun, curiosity, and self-learning, I wanted to display all my movie data from my Letterboxd account. However, this proved to be difficult considering that Letterboxd does not offer a public API quite yet. So, I wrote a Python script to scrape my data from <a class="about-link" href="https://letterboxd.com/Phungy/">Letterboxd</a> and save it into a Google Sheet. The Python script is run automatically once every 24 hours, ensuring new data daily. With the power of Looker Studio, the data is then sliced and diced, allowing me to dynamically create this neat little chart to display all the information.</p>
+                <p>*If you're having trouble viewing the chart, please log into your Google account and enable third-party cookies. Or, <a class="about-link" target = blank href="https://lookerstudio.google.com/reporting/f732dd6c-f513-4fca-b727-e47b23fa8e66">click here!</a></p>
             </section>
         </article>
     </div>
@@ -104,16 +102,16 @@
             }
 
             iframe {
-                order: 2;
+                order: 1;
                 width: 100%; /* Full width on smaller screens */
                 height: 100vh; /* Adjust height on smaller screens */
                 
             }
 
             article {
-                order:1;
+                order:2;
                 width: 100%;
-                margin-top: -50px;
+                margin-top: -100px;
             }
         }
     </style>
