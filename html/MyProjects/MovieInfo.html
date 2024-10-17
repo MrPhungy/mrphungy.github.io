@@ -48,74 +48,78 @@
         </nav>
     </header>
     
-        <h1 class="note-page-title">A Look Into My Movies</h1>
-            <div class="note-page-article">
-                <article>
-                    <section>
-                        <h2>Visualizing Movie Data</h2>
-                        <p>For a bit of fun, curiosity, and self-learning, I wanted to display all my movie data from my Letterboxd account. However, this proved to be difficult considering that Letterboxd does not offer a public API quite yet. So, I wrote a Python script to scrape my data from Letterboxd and save it into a CSV file. With the power of Tableau, the data is then sliced and diced allowing me to create this neat little viz to display all information. </p>
-                        <p>I am currently working on dynamically updating the data.</p>
-                        <a class="about-link" href="https://letterboxd.com/Phungy/">Letterboxd</a>
-                    </section>
-                </article>
-            </div>
+
+
+
+
+
+    <!--<h1 class="note-page-title">A Look Into My Movies</h1>-->
+    <div class="note-page-article">
+        <iframe src="https://lookerstudio.google.com/embed/reporting/f732dd6c-f513-4fca-b727-e47b23fa8e66/page/bjmFE" 
+            frameborder="0" 
+            allowfullscreen 
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+
+        <article>
+            <section>
+                <h2>Visualizing Movie Data</h2>
+                <p>For a bit of fun, curiosity, and self-learning, I wanted to display all my movie data from my Letterboxd account. However, this proved to be difficult considering that Letterboxd does not offer a public API quite yet. So, I wrote a Python script to scrape my data from Letterboxd and save it into a Google Sheet. The Python script is run automatically once every 24 hours, ensuring new data daily. With the power of Looker Studio, the data is then sliced and diced, allowing me to dynamically create this neat little chart to display all the information.</p>
+                <a class="about-link" href="https://letterboxd.com/Phungy/">Letterboxd</a>
+            </section>
+        </article>
+    </div>
+
+    <style>
+        /* Flexbox layout */
+        .note-page-article {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px; /* Space between the iframe and the text */
+            margin-top: 50px;
+        }
+
+        /* Article on the right */
+        article {
+            margin-top: 100px;
+            width: 40%;
+        }
+
+        
+
+        /* Iframe on the left */
+        iframe {
+            width: 60%;
+            height: 100vh; /* Full height of the viewport */
+            border: 0;
+
+        }
+
+        /* Optional media query to adjust for smaller screens */
+        @media (max-width: 768px) {
+            .note-page-article {
+                flex-direction: column;
+            }
+
+            iframe {
+                order: 2;
+                width: 100%; /* Full width on smaller screens */
+                height: 100vh; /* Adjust height on smaller screens */
+                
+            }
+
+            article {
+                order:1;
+                width: 100%;
+                margin-top: -50px;
+            }
+        }
+    </style>
+
+
             
-                        <!-- Container to center the Tableau visualization -->
-            <div class="tableau-container">
-                <div class='tableauPlaceholder' id='viz1728964958915' style='position: relative'>
-                    <noscript><a href='#'><img alt='DashboardMain' src='https://public.tableau.com/static/images/Bo/Book1_17289010322230/DashboardMain/1_rss.png' style='border: none' /></a></noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='Book1_17289010322230/DashboardMain' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book1_17289010322230/DashboardMain/1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                    </object>
-                </div>
-            </div>
 
-            <script type='text/javascript'>
-                var divElement = document.getElementById('viz1728964958915');
-                var vizElement = divElement.getElementsByTagName('object')[0];
 
-                if (divElement.offsetWidth > 800) {
-                    vizElement.style.width = '650px';
-                    vizElement.style.height = '2027px';
-                } else if (divElement.offsetWidth > 500) {
-                    vizElement.style.width = '650px';
-                    vizElement.style.height = '2027px';
-                } else {
-                    vizElement.style.width = '100%';
-                    vizElement.style.height = '627px';
-                }
-
-                var scriptElement = document.createElement('script');
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            </script>
-
-            <!-- Add this CSS for centering -->
-            <style>
-                .tableau-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh; /* Full viewport height */
-                    width: 100%;
-                }
-
-                .tableauPlaceholder {
-                    margin: auto;
-                }
-            </style>
 
     <script src="script.js"></script>
 </body>

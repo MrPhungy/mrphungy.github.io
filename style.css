@@ -888,16 +888,3 @@ footer {
     padding: 5px 10px;
 }
 
-.viz-container {
-    display: flex;
-    justify-content: center;  /* Horizontal centering */
-    align-items: center;      /* Vertical centering */
-    margin-top: 20px;         /* Optional, adjust margin as needed */
-}
-
-.tableauPlaceholder {
-    width: 100%;              /* Ensure placeholder width adapts */
-    max-width: 800px;          /* Optional, limit the maximum width */
-    text-align: center;        /* Center the contents within the div */
-}
-
