@@ -37,7 +37,7 @@ textarea:focus {
     margin-top: 10px;
     background-color: #d3d3d3; /* Light grey background */
     border-radius: 15px; /* Rounded corners */
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bolder;
     width: 80%; /* Same width as textarea */
     text-align: left; /* Center the text */
@@ -86,7 +86,7 @@ button:hover {
         font-size: 32px;
     }
     #output {
-        font-size: 30px;
+        font-size: 18px;
         font-weight: bold;
         color: #000000;
         margin-top: 10px;
