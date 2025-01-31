@@ -1,0 +1,107 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 200px; /*only pc*/
+    padding: 20px;
+    text-align: center;
+    background-color: #1d1e21;
+}
+
+
+/* Heading Styles */
+h1 {
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+/* Textarea Styling */
+textarea {
+    font-family:'Courier New', Courier, monospace;
+    width: 80%;
+    height: 100px;
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+textarea:focus {
+    outline: none; /* Remove the focus outline */
+}
+
+/* Output Styling */
+#output {
+    display: inline-block;
+    height: 100px;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+    background-color: #d3d3d3; /* Light grey background */
+    border-radius: 15px; /* Rounded corners */
+    font-size: 30px;
+    font-weight: bolder;
+    width: 80%; /* Same width as textarea */
+    text-align: left; /* Center the text */
+    white-space: pre-wrap; /* Preserve spacing and line breaks */
+    overflow-wrap: break-word; /* Ensure text wraps properly */
+}
+
+.default-message {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px !important;         /* Force font size */
+    font-weight: 100 !important;
+    color: #757575 !important;                    /* Font color */
+    text-align: left !important;                  /* Text alignment */
+    padding: 10px 10px 10px 10px !important;
+}
+
+button {
+    background-color: #88888819; /* Make the background transparent */
+    border: 1px solid #888888d0; /* Set your border color */
+    border-radius: 15px; /* Add rounded corners */
+    color: #888888; /* Inherit the text color */
+    padding: 4px 30px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    float: center; /* Align to the right */
+    font-size: 1.4em;
+    font-weight: bolder;
+
+}
+
+button:hover {
+    color:#ffffffc8;
+    border: 1px solid #ffffffc8;
+    background-color: #88888868;
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+
+/* Responsive Design */
+@media (max-width: 769px) {
+    body {
+        margin: 30px 0px 0px 0px;
+    }
+    h1 {
+        color: #ffffff;
+        font-weight: bolder;
+        font-size: 32px;
+    }
+    #output {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000000;
+        margin-top: 10px;
+    }
+    .default-message {
+        font-size: 16px !important;         /* Force font size */
+    }
+    textarea {
+        width: 80%;
+        height: 100px;
+        padding: 10px 10px 10px 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        resize: none;
+    }
+    
+}

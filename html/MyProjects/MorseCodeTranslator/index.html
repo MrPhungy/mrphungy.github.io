@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<a href="https://keviin.com">
+    <button>⬅ Back to Home</button>
+</a>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Morse Code Translator</h1>
+    <textarea id="textInput" placeholder="Enter text or Morse code..." oninput="liveTranslate()"></textarea>
+    <p id="output"></p>
+
+    <script>
+        //Morse code map
+        const morseCodeMap = {
+            'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....',
+            'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.',
+            'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-',
+            'y': '-.--', 'z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
+            '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----', ' ': '/' 
+        };
+        const textMap = Object.fromEntries(Object.entries(morseCodeMap).map(([letter, morse]) => [morse, letter]));
+
+        // Live translation function
+        function liveTranslate() {
+            const input = document.getElementById('textInput').value.trim();
+            const outputElement = document.getElementById('output');
+            
+            // If the input is empty, display "Translation"
+            if (input === '') {
+                outputElement.innerText = 'Translation';
+                outputElement.classList.add('default-message'); // Add class for default message
+            } else {
+                let output = '';
+                
+                // Morse code input
+                if (input.includes('.') || input.includes('-')) {
+                    output = input.split(' ').map(code => textMap[code] || '').join('');
+                } else {
+                    // regular text input
+                    output = input.toLowerCase().split('').map(char => morseCodeMap[char] || '').join(' '); 
+                }
+                
+                // Display the translation
+                outputElement.innerText = output;
+                outputElement.classList.remove('default-message'); // Remove class once translation starts
+            }
+        }
+
+        // Set the default message on page load
+        window.onload = function() {
+            const outputElement = document.getElementById('output');
+            outputElement.innerText = 'Translation'; // Default message
+            outputElement.classList.add('default-message'); // Add class for default message
+        };
+    </script>
+</body>
+</html>
